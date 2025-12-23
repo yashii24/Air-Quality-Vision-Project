@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+
+# Environment variables
+.env
+
+# Large dataset (if ever added again)
+air_quality.hourly_data.csv
+*.csv

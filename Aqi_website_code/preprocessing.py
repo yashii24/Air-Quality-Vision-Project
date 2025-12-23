@@ -92,8 +92,4 @@ def preprocess_data(df):
     print("📌 Final columns:", df1.columns.tolist())
     print(df1.head())
 
-<<<<<<< HEAD
     return df1
-=======
-    return df1
->>>>>>> 2b9cae17f1de3bf938fc501d6dcd67ae05ab23fd
