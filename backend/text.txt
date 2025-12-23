@@ -1,0 +1,47 @@
+utils/db.js:
+const mongoose = require("mongoose");
+
+const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI);
+    console.log("✅ Connected to MongoDB");
+  } catch (err) {
+    console.error("❌ MongoDB connection error:", err.message);
+    process.exit(1);
+  }
+};
+
+module.exports = connectDB;
+
+
+
+function getWAQIStationName(localName) {
+  return waqiStationMap[localName] || localName;
+}
+
+
+uvicorn ml_api:app --reload
+
+
+ "Burari Crossing", "Aya Nagar",
+ "CRRI Mathura Road", "Chandni Chowk", "DTU", 
+ "IGI Airport (T3)", "IHBAS, Dilshad Garden",
+"ITO","Lodhi Road IMD",
+ "NSIT Dwarka",
+ "North Campus", "Shadipur",
+"Sirifort", 
+
+
+
+use air_quality_database
+
+// Step 1: fetch all documents into an array
+var docs = db.more_data.find().toArray();
+
+// Step 2: remove _id from each document (so Mongo can assign new ones)
+docs = docs.map(d => { delete d._id; return d; });
+
+// Step 3: insert into the target database/collection
+db.getSiblingDB("air_quality").hourly_data.insertMany(docs);
+
+
