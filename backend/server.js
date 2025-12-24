@@ -24,6 +24,8 @@ app.use(
     origin: [
       "http://localhost:5173",                 // local dev
       "https://air-quality-vision.vercel.app", // production frontend
+      "https://frontend-1zmspshmb-yashis-projects-0b345fd8.vercel.app",
+      "https://frontend-three-nu-69.vercel.app"
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: false, // keep false unless you use cookies
