@@ -4,11 +4,12 @@ import {Wind, Cloud, Droplets, Sun, Thermometer, AlertTriangle, HelpCircle,} fro
 
 export default function PollutantCard({ name = "PM2.5", value = 134, unit = "µg/m³" }) {
   const getBgColor = (value) => {
-    if (value <= 30) return "bg-green-100 text-green-700";
-    if (value <= 60) return "bg-yellow-100 text-yellow-700";
-    if (value <= 90) return "bg-orange-100 text-orange-700";
-    if (value <= 120) return "bg-red-100 text-red-700";
-    return "bg-purple-100 text-purple-700";
+    if (value <= 30) return "bg-green-100 text-green-700";       // Good
+    if (value <= 60) return "bg-yellow-100 text-yellow-700";     // Satisfactory
+    if (value <= 90) return "bg-orange-100 text-orange-700";     // Moderate
+    if (value <= 120) return "bg-red-100 text-red-700";          // Poor
+    if (value <= 250) return "bg-purple-100 text-purple-700";    // Very Poor
+    return "bg-rose-200 text-rose-700"; 
   };
 
   const iconMap = {

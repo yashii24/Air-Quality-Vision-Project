@@ -10,12 +10,12 @@ import api from "../services/api";
 import "leaflet/dist/leaflet.css";
 
 const AQI_COLORS = [
-  { min: 0, max: 50, color: "#009966" },
-  { min: 51, max: 100, color: "#ffde33" },
-  { min: 101, max: 150, color: "#ff9933" },
-  { min: 151, max: 200, color: "#cc0033" },
-  { min: 201, max: 300, color: "#660099" },
-  { min: 301, max: 500, color: "#7e0023" }
+  { min: 0, max: 50, color: "#00B050" },
+  { min: 51, max: 100, color: "#FFFF00" },
+  { min: 101, max: 200, color: "#FF9900" },
+  { min: 201, max: 300, color: "#FF0000" },
+  { min: 301, max: 400, color: "#7030A0" },
+  { min: 401, max: 500, color: "#660000" }
 ];
 
 const getAQIColor = (aqi) => {

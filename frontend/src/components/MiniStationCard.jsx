@@ -63,40 +63,40 @@ export default function MiniStationCard({ station = {}, onClick }) {
 /* helpers */
 function getColor(aqi) {
   if (isNaN(aqi)) return "#9CA3AF";
-  if (aqi <= 50) return "#2f855a"; // green
-  if (aqi <= 100) return "#8FB82B";
-  if (aqi <= 200) return "#F6E05E";
-  if (aqi <= 300) return "#F59E0B";
-  if (aqi <= 400) return "#EF4444";
-  if (aqi <= 500) return "#9B2C2C";
+  if (aqi <= 50) return "#00B050"; // green
+  if (aqi <= 100) return "#FFFF00";
+  if (aqi <= 200) return "#FF9900";
+  if (aqi <= 300) return "#FF0000";
+  if (aqi <= 400) return "#7030A0";
+  if (aqi <= 500) return "#660000";
   return "#7e0023";
 }
 
 function getStatusLabel(aqi) {
   if (isNaN(aqi)) return "N/A";
   if (aqi <= 50) return "Good";
-  if (aqi <= 100) return "Moderate";
-  if (aqi <= 200) return "Poor";
-  if (aqi <= 300) return "Unhealthy";
-  if (aqi <= 400) return "Severe";
-  if (aqi <= 500) return "Hazardous";
-  return "⚠️";
+  if (aqi <= 100) return "Satisfactory";
+  if (aqi <= 200) return "Moderate";
+  if (aqi <= 300) return "Poor";
+  if (aqi <= 400) return "Very Poor";
+  if (aqi <= 500) return "Severe";
+  return "⚠️Hazardous";
 }
 
 function getFriendlyMessage(status) {
   switch (status) {
     case "Good":
       return "🌿 Good – Enjoy the outdoors!";
+    case "Satisfactory":
+      return "😌 Satisfactory – Safe for most people";
     case "Moderate":
-      return "😌 Moderate – Safe for most people";
+      return "😷 Moderate – Might affect sensitive groups";
     case "Poor":
-      return "😷 Poor – Might affect sensitive groups";
-    case "Unhealthy":
-      return "🚫 Unhealthy – Limit outdoor activity";
+      return "🚫 Poor – Limit outdoor activity";
+    case "Very Poor":
+      return "🛑 Very Poor – Avoid going outside";
     case "Severe":
-      return "🛑 Severe – Avoid going outside";
-    case "Hazardous":
-      return "☠️ Hazardous – Health warning for everyone";
+      return "☠️ Severe – Health warning for everyone";
     default:
       return "ℹ️ No data available";
   }

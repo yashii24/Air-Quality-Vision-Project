@@ -10,7 +10,7 @@ export default function FiltersBar({
   categoryFilter,
   setCategoryFilter,
 }) {
-  const categories = ["all", "Good", "Moderate", "Poor", "Unhealthy", "Severe", "Hazardous"];
+  const categories = ["all", "Good", "Satisfactory", "Moderate", "Poor", "Very Poor", "Severe", "Hazardous"];
 
   return (
     <div className="flex flex-col md:flex-row gap-3 md:items-center justify-between">

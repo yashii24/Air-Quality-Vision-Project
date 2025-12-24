@@ -82,19 +82,21 @@ export default function Forecast({ station }) {
           const dateObj = new Date(f.Timestamp);
 
           let category = "Good";
-          if (f.PM25 > 250.4) category = "Hazardous";
-          else if (f.PM25 > 150.4) category = "Very Unhealthy";
-          else if (f.PM25 > 55.4) category = "Unhealthy";
-          else if (f.PM25 > 35.4) category = "Unhealthy for Sensitive";
-          else if (f.PM25 > 12) category = "Moderate";
+
+          if (f.PM25 > 250) category = "Severe";
+          else if (f.PM25 > 120) category = "Very Poor";
+          else if (f.PM25 > 90) category = "Poor";
+          else if (f.PM25 > 60) category = "Moderate";
+          else if (f.PM25 > 30) category = "Satisfactory";
+          else category = "Good";
 
           const colors = {
-            Good: "#009966",
-            Moderate: "#ffde33",
-            "Unhealthy for Sensitive": "#ff9933",
-            Unhealthy: "#cc0033",
-            "Very Unhealthy": "#660099",
-            Hazardous: "#7e0023",
+            Good: "#76C779",          // light green
+            Satisfactory: "#FFDE59",  // yellow
+            Moderate: "#FF8C42",      // orange
+            Poor: "#E53935",          // red
+            "Very Poor": "#8E24AA",   // purple
+            Severe: "#7E0023",        // maroon
           };
 
           return (
