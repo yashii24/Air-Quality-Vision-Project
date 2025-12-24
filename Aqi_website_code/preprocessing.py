@@ -78,7 +78,11 @@ def preprocess_data(df):
         df1["lag_3d"] = df1["PM25"].shift(72)
 
     # Drop rows without valid lags
-    df1 = df1.dropna(subset=["PM25", "lag_1d", "lag_2d", "lag_3d"])
+    df1 = df1.dropna(subset=["PM25"])
+
+    df1["lag_1d"].fillna(df1["PM25"], inplace=True)
+    df1["lag_2d"].fillna(df1["PM25"], inplace=True)
+    df1["lag_3d"].fillna(df1["PM25"], inplace=True)
 
     # -------------------------------
     # One-hot encode stations
