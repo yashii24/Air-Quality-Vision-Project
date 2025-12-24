@@ -14,34 +14,34 @@ export default function AQICard({ data }) {
 
   const getColor = (aqi) => {
     if (isNaN(aqi)) return "#9CA3AF";
-    if (aqi <= 50) return "#2f855a"; // Good
-    if (aqi <= 100) return "#8FB82B"; // Moderate
-    if (aqi <= 200) return "#F6E05E"; // Poor
-    if (aqi <= 300) return "#F59E0B"; // Unhealthy
-    if (aqi <= 400) return "#B03A9E"; // Very Unhealthy
-    if (aqi <= 500) return "#EF4444"; // Severe
+    if (aqi <= 50) return "#00B050"; // Good
+    if (aqi <= 100) return "#FFFF00"; // Satisfactory
+    if (aqi <= 200) return "#FF9900"; // Moderate
+    if (aqi <= 300) return "#FF0000"; // Poor
+    if (aqi <= 400) return "#7030A0"; // Very Poor
+    if (aqi <= 500) return "#660000"; // Severe
     return "#7e0023"; // Hazardous
   };
 
   const getAQIStatus = (aqi) => {
     if (isNaN(aqi)) return "N/A";
     if (aqi <= 50) return "Good";
-    if (aqi <= 100) return "Moderate";
-    if (aqi <= 200) return "Poor";
-    if (aqi <= 300) return "Unhealthy";
-    if (aqi <= 400) return "Very Unhealthy";
+    if (aqi <= 100) return "Satisfactory";
+    if (aqi <= 200) return "Moderate";
+    if (aqi <= 300) return "Poor";
+    if (aqi <= 400) return "Very Poor";
     if (aqi <= 500) return "Severe";
     return "Hazardous";
   };
 
   // AQI scale segments with proportional widths
   const aqiScale = [
-    { label: "Good", color: "#2f855a", range: 50 },
-    { label: "Moderate", color: "#8FB82B", range: 50 },
-    { label: "Poor", color: "#F6E05E", range: 100 },
-    { label: "Unhealthy", color: "#F59E0B", range: 100 },
-    { label: "Very Unhealthy", color: "#B03A9E", range: 100 },
-    { label: "Severe", color: "#EF4444", range: 100 },
+    { label: "Good", color: "#00B050", range: 50 },
+    { label: "Satisfactory", color: "#FFFF00", range: 50 },
+    { label: "Moderate", color: "#FF9900", range: 100 },
+    { label: "Poor", color: "#FF0000", range: 100 },
+    { label: "Very Poor", color: "#7030A0", range: 100 },
+    { label: "Severe", color: "#660000", range: 100 },
     { label: "Hazardous", color: "#7e0023", range: 0 }, // extra >500
   ];
 

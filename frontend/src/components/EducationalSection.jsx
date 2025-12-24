@@ -72,11 +72,11 @@ export default function EducationalSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-2 text-white font-medium text-sm">
             {[
               { label: 'Good', color: 'bg-green-500', range: '0–50' },
-              { label: 'Moderate', color: 'bg-yellow-400', range: '51–100' },
-              { label: 'Unhealthy for Sensitive', color: 'bg-orange-400', range: '101–150' },
-              { label: 'Unhealthy', color: 'bg-red-500', range: '151–200' },
-              { label: 'Very Unhealthy', color: 'bg-purple-600', range: '201–300' },
-              { label: 'Hazardous', color: 'bg-rose-900', range: '301+' },
+              { label: 'Satisfactory', color: 'bg-yellow-400', range: '51–100' },
+              { label: 'Moderate', color: 'bg-orange-400', range: '101–200' },
+              { label: 'Poor', color: 'bg-red-500', range: '200–300' },
+              { label: 'Very Poor', color: 'bg-purple-600', range: '300–400' },
+              { label: 'Severe', color: 'bg-rose-900', range: '401+' },
             ].map((level, i) => (
               <div key={i} className={`rounded-lg px-3 py-2 ${level.color}`}>
                 <span className="block text-xs">{level.label}</span>
