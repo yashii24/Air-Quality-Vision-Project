@@ -108,7 +108,7 @@ export default function AQICard({ data }) {
           {/* AQI Status */}
           <div className="flex flex-col items-end">
             <span
-              className="text-sm font-semibold px-3 py-1 rounded-full text-white shadow-sm"
+              className="text-sm font-semibold px-3 py-1 rounded-full text-black shadow-sm"
               style={{ backgroundColor: getColor(aqi) }}
             >
               {getAQIStatus(aqi)}
